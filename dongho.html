@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dong ho thoi gian</title>
+    <style>
+        #time{
+            background-color: blue;
+            background-image:url(R.jfif);
+            padding: 70px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            width: 500px;
+            margin: 30px auto;
+            border-radius: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="time"></div>
+    <script>
+        function dongho(){
+            let today = new Date();
+            let gio = today.getHours();
+            let phut = today.getMinutes();
+            let giay = today.getSeconds();
+
+            if (gio<10){
+                gio = "0" + gio;
+            }
+            if (phut<10){
+                phut = "0" + phut 
+            }
+            if (giay<10){
+                giay = "0" + giay
+            }
+            document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay;
+            setTimeout("dongho()",1000);
+        }
+        dongho();
+    </script>
+</body>
+</html>
